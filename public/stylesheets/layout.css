@@ -1,0 +1,30 @@
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(210, 229, 240);
+}
+
+a {
+  color: #00B7FF;
+}
+#seprator { 
+  display: flex; 
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+
+#seprator:before, 
+#seprator:after { 
+  content: ""; 
+  flex: 1 1; 
+  border-bottom: 2px solid #000; 
+  margin: auto; 
+}
+
+.cross {
+  position: absolute;
+  right: 10px;
+  color: rgb(210, 229, 240);;
+  font-size: medium;
+}

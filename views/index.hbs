@@ -1,0 +1,173 @@
+<div class="container-fluid">
+  <h1 class="text-center heading" style="font-family: cursive;">Some Mini Projects</h1>
+
+
+  <div id="weather" class="container jumbotron" style="background-color:wheat;">
+    <h2 class="text-center">Get Weather Report</h2>
+
+    <div class="row" style="text-align:center">
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <input type="text" id="city" class="form-control" placeholder="City Name" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-light" type="button" onclick="city()"><i class="fas fa-search-location"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <button class="btn-block btn-light btn" type="button" onclick="locate()">Locate Me!</button>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <input type="number" id="zip" class="form-control" placeholder="PIN Code" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-light" type="button" onclick="zip()"><i class="fas fa-search-location"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+    <div id="widget" class="jumbotron container" style="background-color: wheat; position : relative; height : 250px"></div>
+
+
+
+    <div id="data"></div>
+  </div>
+
+
+  <div class="container jumbotron" style="background-color: wheat;">
+    <h2 class="text-center">Random-Shayari</h2>
+    <div>
+      <div class="jumbotron" id="bg">
+        <i class="fas fa-quote-left" style="font-size: 20px;"></i>
+        <p id="shayri">Ke bayan nhi tu lafzo me
+          Pre he tu mere alfazo se
+          Ki kya mayne he tere is zindagi me
+          Kese batau tujhe meri bato se 🥰
+        </p>
+
+        <h6 id="by">Written By-iPhone 💙</h6>
+        <hr>
+        <div id="share">
+          <div class="fb-share-button" data-href="https://akshatsoni.herokuapp.com/" data-layout="button"
+            data-size="large"><a target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fakshatsoni.herokuapp.com%2F&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
+
+        <button type="button" id="next">Next <i class="fa fa-caret-right"></i></button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container text-center jumbotron" style="background-color: wheat;">
+
+    <h2>Calculator</h2>
+    <input type="button" class="btn btn-block" id="tf"></input>
+    <table style="position: relative; top:10px">
+      <tr>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(1)">1</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(2)">2</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(3)">3</button></td>
+        <td><button class="btn btn-danger" style="font-size: 30px; width: 70px; height: 50px;" id="del"
+            onclick="cut()">&times;</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(4)">4</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(5)">5</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(6)">6</button></td>
+        <td><button class="btn btn-danger" style="font-size: 30px; width: 70px; height: 50px;" id="clear"
+            onclick="document.getElementById('tf').value=null;">C</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(7)">7</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(8)">8</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(9)">9</button></td>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;" id="eq"
+            onclick="document.getElementById('tf').value = eval(document.getElementById('tf').value)">=</button>
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('.')">.</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(0)">0</button></td>
+        <td><button class="btn btn-info" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('00')">00</button></td>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('%')">%</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('+')">+</button></td>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('-')">-</button></td>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert('*')">*</button></td>
+        <td><button class="btn btn-primary" style="font-size: 30px; width: 70px; height: 50px;"
+            onclick="insert(' / ')">/</button></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="container jumbotron" style="background-color: wheat;">
+    <h2 class="text-center">Roman-Decimal Converter</h2>
+
+    <div style="max-width: 360px; margin: auto;">
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Decimal</span>
+        </div>
+        <input id="decimal" type="number" class="form-control" aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Roman</span>
+        </div>
+        <input id="roman" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container jumbotron" style="background-color: wheat;">
+    <h2 class="text-center">Open in whatsapp</h2>
+    <div style="margin: auto; max-width:360px">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">+91</span>
+        </div>
+        <input type="number" class="form-control" placeholder="Number" aria-label="Number"
+          aria-describedby="basic-addon1" id="whatsapp">
+      </div>
+      <a id="send" href="#"><button type="button" class="btn btn-block btn-success" onclick="send()"><i
+            class="fab fa-whatsapp"></i> Whatsapp</button></a>
+    </div>
+  </div>
+
+
+</div>
+
+
+<link rel="stylesheet" href="/stylesheets/index.css">
+<script src="/javascripts/index.js"></script>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=1103741046764336&autoLogAppEvents=1"
+  nonce="QLa4Rgs3"></script>

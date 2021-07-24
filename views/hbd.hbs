@@ -1,0 +1,39 @@
+<div class="jumbotron container" style="background-color: wheat; margin-top:20px">
+    <h2 class="text-center">Wish! Happy Birthday To Your Friend</h2>
+
+
+    <div class="form-group">
+        <label>Name Of Friend</label>
+        <input type="text" id="person" class="form-control" name="person" placeholder="Name" required>
+    </div>
+    <div class="form-group">
+        <label>Select Images (choose one or many)</label>
+        <input type="file" id="file" class="form-control" name="files" accept="image/*" multiple="multiple" required />
+    </div>
+
+    <input class="btn btn-block btn-primary" type="button" id="but_upload" value="Upload">
+</div>
+
+
+<div id="data" class="jumbotron container" style="background-color: wheat; visibility:hidden ">
+            <div class="input-group mb-3s">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Url :</span>
+                </div>
+                <input id="myinput" type="text" value="" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <button class="btn btn-primary col" onclick="copytoclip()"><i class="far fa-copy"></i> Copy
+                        Url</button>
+                    <a id="whatsapp" href="" type="button"
+                        class="btn btn-success col" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+                </div>
+            </div>
+        </div>
+
+
+
+<script src="/javascripts/hbd.js"></script>

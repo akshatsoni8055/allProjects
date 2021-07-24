@@ -1,0 +1,44 @@
+<div class="container" style="background-color: white;">
+    <div class="list-group">
+        <ul class="list-group">
+            {{#if more}}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a type="button" class="btn btn-block btn-light" href="/inbox"><i class="fas fa-arrow-left"></i> Back to Inbox</a>
+            </li>
+            {{/if}}
+            {{#unless more}}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a type="button" class="btn btn-block btn-light" href="/inbox/more"><i class="fas fa-search"></i> Find More Peoples</a>
+            </li>
+            {{/unless}}
+            {{#if messages}}
+            {{#each inbox}}
+            <a href="/inbox/message/?from={{this.from}}&to={{this.to}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{this.name}}
+                    <div class="image-parent">
+                        <img src="{{this.pic}}"
+                            class="img-fluid">
+                    </div>
+                </li>
+            </a>
+            {{/each}}
+            {{/if}}
+            {{#unless messages}}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                   <div>
+                       <h2 style="text-align: center;">Empty ChatBox, Find more people to start conversation</h2>
+                   </div>
+                </li>
+            {{/unless}}
+        </ul>
+        </a>
+    </div>
+</div>
+<style>
+    .img-fluid {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+</style>

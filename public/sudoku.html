@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a1f4c34f56.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<body>
+    <div class="container jumbotron text-center">
+        <h1 style="font-family: cursive;" >Enter unsolved Sudoku</h1>
+        <div id="main">
+            <table id="puzz">
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                    <td><input type="number" max="9" min="1"></td>
+                </tr>
+            </table>
+            <button onclick="putData()" class="btn-block btn btn-primary">Solve</button>
+            <button onclick="clearData()" class="btn-block btn btn-danger">Clear</button>
+        </div>
+    </div>
+</body>
+<style>
+    input {
+        height: 35px;
+        width: 35px;
+        font-size: larger;
+        text-align: center;
+    }
+    
+    #main {
+        margin: auto;
+        max-width: fit-content;
+    }
+</style>
+
+<script>
+
+    var input = document.getElementsByTagName('input')
+
+    function getData() {
+
+        let grid = [], j, i=0
+
+        while (i < input.length) {
+            let arr = []
+
+            for (j = 0; j < 9; j++) {
+                let val = input[i + j].value
+                if (val == '') val = 0
+                arr.push(parseInt(val))
+            }
+
+            grid.push(arr)
+            i += j
+        }
+        return grid
+    }
+
+    function solve(grid, row = 0, col = 0) {
+
+        if (row === grid.length - 1 && col === grid.length) return true
+
+        if (col === grid.length) {
+            col = 0
+            row++
+        }
+
+        if (grid[row][col]) return solve(grid, row, col + 1)
+
+        for (let n = 1; n < 10; n++) {
+            if (isValid(grid, row, col, n)) {
+                grid[row][col] = n
+
+                if (solve(grid, row, col + 1)) return true
+
+                grid[row][col] = 0
+            }
+        }
+
+        return false
+    }
+
+    function isValid(grid, row, col, n) {
+
+        for (let i = 0; i < grid.length; i++) {
+            if (grid[row][i] === n || grid[i][col] === n) return false
+        }
+
+        let startRow = row - row % 3, startCol = col - col % 3;
+
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (grid[i + startRow][j + startCol] === n) {
+                    return false;
+                }
+            }
+        }
+
+        return true
+
+    }
+
+   function putData() {
+        let grid = getData()
+
+        if (!solve(grid)) {
+            alert('Unsolvable Sudoku')
+            return
+        }
+        grid = grid.flat()
+
+        for (let i = 0; i < input.length; i++) {
+            input[i].value = grid[i]
+        }
+    }
+
+    function clearData() {
+        for (let i=0; i<input.length; i++) {
+            input[i].value = ""
+        }
+    }
+
+</script>
+
+</html>

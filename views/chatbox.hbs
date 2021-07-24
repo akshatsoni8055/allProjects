@@ -1,0 +1,24 @@
+<section class="msger">
+	<header class="msger-header" style="display: flex;">
+		<div class="msger-header-title">
+			<i class="fas fa-comment-alt"></i> {{friend}} 
+		</div>
+		<div  id="online"></div> 
+		<div  id="typing"></div>
+	</header>
+
+	<main class="msger-chat">
+
+
+	</main>
+
+	<form class="msger-inputarea">
+		<input type="text" class="msger-input" placeholder="Enter your message...">
+		<button type="submit" class="msger-send-btn"><i class="fas fa-paper-plane"></i></button>
+	</form>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+	integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" href="/stylesheets/chat.css">
+<script src="/javascripts/chat.js"></script>

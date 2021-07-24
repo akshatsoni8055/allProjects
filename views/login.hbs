@@ -1,0 +1,62 @@
+<p id="msg"> {{msg}} <span class="cross">&#10006;</span></p>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form" action="/auth/register" method="POST">
+          <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
+          <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+          <input type="password" name="cpassword" class="form-control" id="cpassword" placeholder="Password" required>
+          <p id="warning" style="color: red;">
+          </p>
+
+      <button id="register" type="button" class="btn btn-light border-dark btn-block">Sign Up</button>
+
+      <h4 id="seprator">Or Continue With</h4>
+      <a href="/auth/google" type="button" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Google</a>
+      <a href="/auth/facebook" type="button" class="btn btn-primary btn-block"><i class="fab fa-facebook"></i>
+        Facebook</a>
+
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+
+
+
+
+    <form method="POST" action="/auth/login" class="login-form">
+      <input type="email" name="username" placeholder="E-mail" aria-label="email" required>
+      <input type="password" name="password" placeholder="password" aria-label="password" required>
+      <button class="btn btn-light border-dark" type="submit">Login</button>
+
+      <h4 id="seprator">Or Continue With</h4>
+      <a href="/auth/google" type="button" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Google</a>
+      <a href="/auth/facebook" type="button" class="btn btn-primary btn-block"><i class="fab fa-facebook"></i>
+        Facebook</a>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<link href="/stylesheets/login.css" rel="stylesheet">
+<script>
+  $('.message a').click(function () {
+    $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+  });
+  $('.cross').click(function () {
+  $('#msg').hide()
+})
+  $("#cpassword, #password").keyup(function () {
+
+    let password = document.getElementById('password').value
+    let cpassword = document.getElementById('cpassword').value
+
+    if (password == cpassword) {
+      $("#register").attr('type', 'submit');
+      document.getElementById("warning").innerText = ""
+    } else {
+      $("#register").attr('type', 'button');
+      document.getElementById("warning").innerText = "Password Mismatched"
+    }
+
+  });
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Game</title>
+</head>
+
+<body style="background-color: black;" class="container">
+  <h1 class="title">Press Enter to Start the Game</h1>
+  <img src="/images/ball.png" id="ball" />
+  <img src="/images/brick.png" id="brick" />
+  <h2>Level : <span id="level">1</span></h2>
+  <h2>Lives : <span id="lives">3</span></h2>
+  <h2>Sc. : <span id="score">00</span></h2>
+  <canvas id="gamescreen" width="800" height="600"> </canvas>
+  <h1 class="name">Created by - Akshat Soni</h1>
+  <script src="/javascripts/game-script.js"></script>
+</body>
+<style>
+#gamescreen {
+    margin-top: 10px;
+    border: 1px solid red;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .name {
+    display: block;
+    color: white;
+    position: absolute;
+    margin-top: 90vh;
+    right: 10px;
+  }
+h2 {
+  color: white
+}
+  .title {
+    color: white;
+    text-align: center;
+  }
+
+  #brick {
+    display: none;
+  }
+
+  #ball {
+    display: none;
+  }
+</style>
+</html>

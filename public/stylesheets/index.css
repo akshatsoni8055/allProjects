@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Lobster&display=swap');
+td button {
+  margin: 2px 2px 2px 2px;
+}
+
+table {
+  margin: auto;
+}
+
+#tf {
+  font-size: large;
+  margin: auto;
+  width: 300px;
+  height: 50px;
+}
+#next {
+  color: white;
+  background-color: rgb(8, 121, 219);
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  #bg {
+    position: relative;
+    margin: auto;
+    max-width: 720px;
+    background-color: aqua;
+    border: solid white 2px;
+    border-radius: 5px;
+  }
+
+  
+  #share {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+  h2{
+    font-family: lobster;
+  }
+  #by {
+    position: absolute;
+    bottom: 35px;
+    right: 8px;
+    font-family: lobster;
+  }
+
+  p {
+    font-family: cursive;
+    text-align: justify;
+  }

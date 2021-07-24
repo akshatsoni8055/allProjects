@@ -1,0 +1,40 @@
+ <div class="container">
+      <div class="row" style="max-width: 1000px; margin: auto;">
+        <select class="col p-3 mb-2 bg-info text-white" id="setTime">
+          <option value="1">1 min</option>
+          <option value="2">2 min</option>
+          <option value="3">3 min</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="15">15 min</option>
+        </select>
+        <select class="col p-3 mb-2 bg-info text-white" id="setType">
+          <option>Fables</option>
+          <option>Stories</option>
+          <option>Data Entry</option>
+          <option>Hard</option>
+        </select>
+      </div>
+      <div class="row" style="max-width: 1000px; margin: auto;">
+        <h2 class="col p-3 mb-2 bg-danger text-white">Time: <span id="displayTime">00</span> sec</h2>
+        <h2 class="col p-3 mb-2 bg-success text-white">Speed: <span id="displaySpeed">00</span> wpm</h2>
+        <h2 class="col p-3 mb-2 bg-primary text-white">Accuracy: <span id="accuracy">--</span> %</h2>
+      </div>
+    <canvas id="typing-area" width="1000" height="360"></canvas>
+    </div>
+
+
+<script src="javascripts/typing.js"></script>
+<style>
+  #typing-area{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+  }
+  .container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+</style>

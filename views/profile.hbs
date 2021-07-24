@@ -1,0 +1,71 @@
+<div class="container">
+
+  <div class="page-header text-center">
+    <h1><span class="fa fa-anchor"></span> Profile</h1>
+  </div>
+
+  <div class="container">
+
+    <div class="jumbotron text-center" style="background-color: wheat;">
+      <img src="{{user.pic}}" width="200" height="200" alt="avatar">
+    </div>
+    <div class="jumbotron" style="background-color: wheat;">
+      <form method="POST" action="/profile">
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">ID</span>
+          </div>
+          <input type="text" class="form-control" value="{{user._id}}" readonly>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="fname">Name</label>
+          <input type="text" class="form-control" id="fname" value="{{user.fname}}" name="fname">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lname">Surname</label>
+          <input type="text" class="form-control" id="lname" value="{{user.lname}}" name="lname">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputEmail4">Email</label>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="{{user.email}}" readonly>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="password">Old Password</label>
+          <input type="password" class="form-control" id="password" name="opassword">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="newpassword">New Password</label>
+          <input type="password" class="form-control" id="newpassword" name="npassword">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="cpassword">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" >
+          <p id="warning" style="color: red;"></p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-block btn-primary">Update</button>
+    </form>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  $('#newpassword, #cpassword').change(()=>{
+    let pass = $('#newpassword').val()
+    let cpass = $('#cpassword').val()
+
+    if (pass !== cpass)
+    document.getElementById('warning').textContent = 'Password mismatched'
+    else
+    document.getElementById('warning').textContent = ''
+  })
+</script>
