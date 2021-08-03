@@ -2,7 +2,7 @@ var express = require('express');
 var app = express.Router();
 const mongoose = require('mongoose');
 const multer = require('multer')
-const { Person } = require('../modals/DB')
+const { Person } = require('../db/models')
 const { addDay } = require('./helper/hbdHelper')
 
 

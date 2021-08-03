@@ -1,4 +1,4 @@
-const { User, Chat, Thread } = require('../../modals/DB')
+const { User, Chat, Thread } = require('../../db/models')
 const online = [];
 
 // Join user to chat

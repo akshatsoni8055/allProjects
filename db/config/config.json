@@ -1,0 +1,8 @@
+{
+    "development": {
+        "DATABASE_URI": "mongodb://localhost:27017/test"
+    },
+    "production": {
+        "use_env_variable": "DATABASE_URI"
+    }
+}

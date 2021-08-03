@@ -2,7 +2,7 @@ require('dotenv').config()
 var express = require('express');
 var app = express.Router();
 var { isLoggedIn } = require('./auth')
-const { User } = require('../modals/DB')
+const { User } = require('../db/models')
 const bcrypt = require('bcrypt')
 
 

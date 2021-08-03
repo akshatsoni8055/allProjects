@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 var express = require('express');
 var app = express.Router();
-const { User, Chat } = require('../modals/DB')
+const { User, Chat } = require('../db/models')
 const { isLoggedIn } = require('./auth')
 
 

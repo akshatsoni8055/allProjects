@@ -1,5 +1,4 @@
-var { sessionMiddleware, app } = require('../app')
-var server = require('http').createServer(app);
+var { server, sessionMiddleware } = require('../app')
 var passport = require('passport')
 var socketio = require('socket.io')
 var io = socketio(server);

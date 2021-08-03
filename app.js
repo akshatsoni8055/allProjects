@@ -7,8 +7,8 @@ var logger = require('morgan');
 var session = require('express-session')
 var MongoStore = require('connect-mongo')
 var passport = require('passport')
-var mongoose = require("mongoose");
 var app = express();
+var server = require('http').createServer(app);
 
 const sessionMiddleware = session({
   secret: process.env.secretkey,
@@ -24,10 +24,6 @@ const sessionMiddleware = session({
   })
 })
 
-mongoose.connect(process.env.uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).catch(error => console.log(error));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -73,4 +69,4 @@ app.use(function (err, req, res, next) {
   });
 });
 
-module.exports = { app, sessionMiddleware };
+module.exports = { app, server, sessionMiddleware };
