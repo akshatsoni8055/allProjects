@@ -8,14 +8,13 @@ var session = require('express-session')
 var MongoStore = require('connect-mongo')
 var passport = require('passport')
 var app = express();
-var server = require('http').createServer(app);
 
 const sessionMiddleware = session({
   secret: process.env.secretkey,
   saveUninitialized: true,
   resave: false,
   store: MongoStore.create({
-    mongoUrl: process.env.uri,
+    mongoUrl: process.env.DATABASE_URI,
     mongoOptions: {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -69,4 +68,4 @@ app.use(function (err, req, res, next) {
   });
 });
 
-module.exports = { app, server, sessionMiddleware };
+module.exports = { app, sessionMiddleware };

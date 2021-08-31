@@ -9,7 +9,7 @@ function sendPassword(recipient, password) {
         from: 'akshatsoni8055@gmail.com',
         subject: 'Login Sussessful',
         html: `<p>Your password is :</p><br><strong>${password}</strong> <br> 
-    <p> You can use this password to login next time into our application <p>`,
+               <p> You can use this password to login next time into our application <p>`,
     }
 
 

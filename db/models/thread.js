@@ -3,9 +3,7 @@ const mongoose = require('mongoose')
 const threadSchema = new mongoose.Schema({
     members: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
+            type: mongoose.Schema.Types.ObjectId
         }
     ]
 }, { timestamps: true })

@@ -3,7 +3,8 @@
 /**
  * Module dependencies.
  */
-var { app, server } = require('../app')
+var { app } = require('../app')
+var { server } = require('../socket')
 var debug = require('debug')('socketiotest:server');
 
 /**

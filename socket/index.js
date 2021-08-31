@@ -1,26 +1,27 @@
-var { server, sessionMiddleware } = require('../app')
+var { sessionMiddleware, app } = require('../app')
+var server = require('http').createServer(app)
+var createError = require('http-errors');
 var passport = require('passport')
 var socketio = require('socket.io')
-var io = socketio(server);
+var io = socketio(server)
 var { userJoin,
     getCurrentUser,
     userLeave,
-    saveChat } = require('./helper/messaging');
+    saveChat } = require('./helper/messaging')
 
-var wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
+var wrap = middleware => (socket, next) => middleware(socket.request, {}, next)
 
-io.use(wrap(sessionMiddleware));
-io.use(wrap(passport.initialize()));
-io.use(wrap(passport.session()));
+io.use(wrap(sessionMiddleware))
+io.use(wrap(passport.initialize()))
+io.use(wrap(passport.session()))
 io.use((socket, next) => {
     if (socket.request.user) {
-        next();
+        next()
     } else {
         next(createError(403))
     }
 });
 
-// Run when client connects
 io.on('connection', socket => {
 
     socket.on('joinRoom', ({ from, to }) => {
@@ -40,7 +41,6 @@ io.on('connection', socket => {
         else
             io.to(socket.id).emit('heisonline')
     })
-    // Listen for chatMessage
     socket.on('chatMessage', msg => {
         const user = getCurrentUser(msg.to);
 
@@ -66,7 +66,6 @@ io.on('connection', socket => {
             io.to(user.id).emit('heisstop');
     })
 
-    // Runs when client disconnects
     socket.on('disconnect', () => {
         const user = userLeave(socket.id);
         if (user !== undefined)
