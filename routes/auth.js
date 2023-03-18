@@ -19,16 +19,14 @@ function isLoggedIn(req, res, next) {
     res.redirect('/auth/login');
 }
 
-function auth(token, refreshToken, profile, done) {
+async function auth(token, refreshToken, profile, done) {
     // find the user in the database based on their facebook id
-    User.findOne({ 'email': profile.emails[0].value }, async function (err, user) {
+    try {
+        const user = await User.findOne({ 'email': profile.emails[0].value });
 
         const password = generatePassword(6)
         const hashedPassword = await bcrypt.hash(password, 10)
 
-
-        if (err)
-            return done(err);
 
         if (user) {
             return done(null, user); // user found, return that user
@@ -46,15 +44,13 @@ function auth(token, refreshToken, profile, done) {
             sendPassword(profile.emails[0].value, password)
 
             // save our user to the database
-            newUser.save(function (err) {
-                if (err)
-                    throw err;
+            await newUser.save();
 
-                // if successful, return the new user
-                return done(null, newUser);
-            });
+            return done(null, newUser);
         }
-    });
+    } catch (err) {
+        return done(err);
+    }
 }
 passport.use(new localStrategy(
     async function (username, password, cb) {
@@ -86,8 +82,8 @@ passport.use(new googleStrategy({
 
 passport.use(new facebookStrategy({
 
-    clientID: process.env.FBclientID,
-    clientSecret: process.env.FBclientSecret,
+    clientID: process.env.FB_CLIENT_ID,
+    clientSecret: process.env.FB_CLIENT_SECRET,
     callbackURL: process.env.fbredirect,
     profileFields: ['id', 'displayName', 'name', 'email', 'picture.type(large)']
 
@@ -97,10 +93,13 @@ passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
-    User.findById(id, function (err, user) {
-        done(err, user);
-    });
+passport.deserializeUser(async function (id, done) {
+    try {
+        const user = await User.findById(id);
+        done(null, user);
+    } catch (error) {
+        done(error, null);
+    }
 });
 
 // logging in a user
