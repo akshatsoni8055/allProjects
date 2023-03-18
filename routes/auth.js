@@ -1,5 +1,4 @@
 /* GET users listing. */
-require('dotenv').config()
 var express = require('express');
 var app = express.Router();
 const passport = require('passport')
@@ -164,9 +163,10 @@ app.get('/google/callback',
     }));
 
 app.get('/logout', function (req, res) {
-    req.session.destroy()
-    req.logout();
-    res.redirect('/');
+    req.logout((err) => {
+        req.session.destroy();
+        res.redirect('/');
+    });
 });
 
 module.exports = { app, isLoggedIn }
